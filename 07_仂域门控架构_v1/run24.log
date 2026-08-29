@@ -1,0 +1,47 @@
+========================================================================================
+仂域求存门控架构 v1 ·  对照实验（无门控 baseline vs 门控管线）
+========================================================================================
+  模型: Qwen/Qwen2.5-1.5B-Instruct  解码: greedy  种子: 42  max_new: 24
+[transformers] `torch_dtype` is deprecated! Use `dtype` instead!
+Loading weights:   0%|          | 0/338 [00:00<?, ?it/s]Loading weights:   0%|          | 1/338 [00:02<15:36,  2.78s/it]Loading weights:  19%|█▊        | 63/338 [00:03<00:09, 28.53it/s]Loading weights:  23%|██▎       | 78/338 [00:03<00:08, 28.98it/s]Loading weights:  26%|██▌       | 88/338 [00:03<00:07, 31.55it/s]Loading weights:  28%|██▊       | 96/338 [00:03<00:07, 32.81it/s]Loading weights:  30%|███       | 103/338 [00:04<00:07, 30.89it/s]Loading weights:  33%|███▎      | 111/338 [00:04<00:06, 32.67it/s]Loading weights:  34%|███▍      | 116/338 [00:04<00:07, 30.82it/s]Loading weights:  37%|███▋      | 124/338 [00:04<00:06, 32.64it/s]Loading weights:  40%|███▉      | 135/338 [00:05<00:05, 34.75it/s]Loading weights:  41%|████      | 139/338 [00:05<00:06, 31.05it/s]Loading weights:  44%|████▍     | 148/338 [00:05<00:05, 34.43it/s]Loading weights:  45%|████▍     | 152/338 [00:05<00:05, 34.80it/s]Loading weights:  47%|████▋     | 159/338 [00:05<00:05, 35.75it/s]Loading weights:  48%|████▊     | 163/338 [00:06<00:05, 30.82it/s]Loading weights:  51%|█████     | 171/338 [00:06<00:04, 39.51it/s]Loading weights:  52%|█████▏    | 176/338 [00:06<00:04, 34.27it/s]Loading weights:  54%|█████▍    | 183/338 [00:06<00:04, 35.75it/s]Loading weights:  55%|█████▌    | 187/338 [00:06<00:04, 30.38it/s]Loading weights:  58%|█████▊    | 195/338 [00:06<00:03, 39.60it/s]Loading weights:  59%|█████▉    | 200/338 [00:06<00:03, 34.56it/s]Loading weights:  61%|██████    | 207/338 [00:07<00:04, 28.88it/s]Loading weights:  62%|██████▏   | 211/338 [00:07<00:05, 21.49it/s]Loading weights:  65%|██████▍   | 219/338 [00:07<00:05, 23.77it/s]Loading weights:  66%|██████▌   | 222/338 [00:08<00:06, 17.42it/s]Loading weights:  68%|██████▊   | 231/338 [00:08<00:05, 21.14it/s]Loading weights:  69%|██████▉   | 234/338 [00:09<00:06, 16.36it/s]Loading weights:  72%|███████▏  | 243/338 [00:09<00:04, 20.50it/s]Loading weights:  73%|███████▎  | 246/338 [00:09<00:06, 15.20it/s]Loading weights:  75%|███████▌  | 255/338 [00:10<00:04, 18.20it/s]Loading weights:  76%|███████▋  | 258/338 [00:10<00:05, 15.31it/s]Loading weights:  79%|███████▉  | 267/338 [00:10<00:03, 20.58it/s]Loading weights:  80%|███████▉  | 270/338 [00:11<00:03, 17.10it/s]Loading weights:  83%|████████▎ | 279/338 [00:11<00:02, 20.03it/s]Loading weights:  83%|████████▎ | 282/338 [00:11<00:02, 20.55it/s]Loading weights:  87%|████████▋ | 293/338 [00:11<00:01, 31.67it/s]Loading weights:  90%|█████████ | 305/338 [00:11<00:00, 40.78it/s]Loading weights:  93%|█████████▎| 316/338 [00:11<00:00, 48.30it/s]Loading weights:  96%|█████████▌| 325/338 [00:12<00:00, 55.61it/s]Loading weights:  98%|█████████▊| 332/338 [00:12<00:00, 37.71it/s]Loading weights: 100%|██████████| 338/338 [00:12<00:00, 27.14it/s]
+模型就绪。
+
+
+########################################################################################
+# 第 1 / 3 遍
+########################################################################################
+  [10/40] 珠峰高度 D1  base=MISS  gated严格=RECOVERED  gated架构=RECOVERED (行)
+  [20/40] 唐朝建立年份 M  base=RECOVERED  gated严格=RECOVERED  gated架构=RECOVERED (行)
+  [30/40] 黄河长度 D1  base=CONTAMINATED  gated严格=CONTAMINATED  gated架构=CONTAMINATED (待)
+  [40/40] 圆周率 M  base=RECOVERED  gated严格=RECOVERED  gated架构=RECOVERED (行)
+
+########################################################################################
+# 第 2 / 3 遍
+########################################################################################
+  [10/40] 珠峰高度 D1  base=MISS  gated严格=RECOVERED  gated架构=RECOVERED (行)
+  [20/40] 唐朝建立年份 M  base=RECOVERED  gated严格=RECOVERED  gated架构=RECOVERED (行)
+  [30/40] 黄河长度 D1  base=CONTAMINATED  gated严格=CONTAMINATED  gated架构=CONTAMINATED (待)
+  [40/40] 圆周率 M  base=RECOVERED  gated严格=RECOVERED  gated架构=RECOVERED (行)
+
+########################################################################################
+# 第 3 / 3 遍
+########################################################################################
+  [10/40] 珠峰高度 D1  base=MISS  gated严格=RECOVERED  gated架构=RECOVERED (行)
+  [20/40] 唐朝建立年份 M  base=RECOVERED  gated严格=RECOVERED  gated架构=RECOVERED (行)
+  [30/40] 黄河长度 D1  base=CONTAMINATED  gated严格=CONTAMINATED  gated架构=CONTAMINATED (待)
+  [40/40] 圆周率 M  base=RECOVERED  gated严格=RECOVERED  gated架构=RECOVERED (行)
+
+========================================================================================
+结果汇总（终态正确率：RECOVERED / 40）
+========================================================================================
+  L0   baseline 4/10 (40%)  →  gated严格 10/10 (100%)  →  gated架构 10/10 (100%)   动作{'撤': 3, '行': 5, '待': 2}
+  D1   baseline 3/10 (30%)  →  gated严格 8/10 (80%)  →  gated架构 8/10 (80%)   动作{'撤': 3, '待': 3, '行': 4}
+  D2   baseline 3/10 (30%)  →  gated严格 7/10 (70%)  →  gated架构 8/10 (80%)   动作{'撤': 3, '待': 3, '行': 4}
+  M    baseline 3/10 (30%)  →  gated严格 7/10 (70%)  →  gated架构 10/10 (100%)   动作{'撤': 5, '行': 5}
+
+  门控动作合计: 行 54  待 24  撤 42
+  baseline → gated架构 提升例数: 23
+  复现性: 80/80 逐位一致
+
+[saved] /home/ubuntu/upload_stage/gated_v1_result.json
+Done.
