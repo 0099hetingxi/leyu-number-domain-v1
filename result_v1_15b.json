@@ -1,0 +1,2253 @@
+{
+  "meta": {
+    "model": "Qwen/Qwen2.5-1.5B-Instruct",
+    "decode": "greedy",
+    "seed": 42,
+    "max_new": 24,
+    "n_repeat": 3,
+    "n_anchors": 10,
+    "n_cases": 40
+  },
+  "reproducibility": {
+    "identical": 40,
+    "total": 40,
+    "diff": 0
+  },
+  "summary": {
+    "L0": {
+      "L_median": 0.0,
+      "n": 10,
+      "by_caliber": {
+        "probe": {
+          "RECOVERED": 10,
+          "CONTAMINATED": 0,
+          "MISS": 0,
+          "n": 10,
+          "rate": 1.0
+        },
+        "contam": {
+          "RECOVERED": 4,
+          "CONTAMINATED": 0,
+          "MISS": 6,
+          "n": 10,
+          "rate": 0.4
+        },
+        "recover": {
+          "RECOVERED": 8,
+          "CONTAMINATED": 0,
+          "MISS": 2,
+          "n": 10,
+          "rate": 0.8
+        }
+      }
+    },
+    "D1": {
+      "L_median": 0.0023862394203622113,
+      "n": 10,
+      "by_caliber": {
+        "probe": {
+          "RECOVERED": 10,
+          "CONTAMINATED": 0,
+          "MISS": 0,
+          "n": 10,
+          "rate": 1.0
+        },
+        "contam": {
+          "RECOVERED": 3,
+          "CONTAMINATED": 3,
+          "MISS": 4,
+          "n": 10,
+          "rate": 0.3
+        },
+        "recover": {
+          "RECOVERED": 3,
+          "CONTAMINATED": 6,
+          "MISS": 1,
+          "n": 10,
+          "rate": 0.3
+        }
+      },
+      "logodds": {
+        "n": 10,
+        "mean": -1.3969493865966798,
+        "median": -0.859375,
+        "pos": 3,
+        "pos_rate": 0.3
+      }
+    },
+    "D2": {
+      "L_median": 0.04139268515822507,
+      "n": 10,
+      "by_caliber": {
+        "probe": {
+          "RECOVERED": 10,
+          "CONTAMINATED": 0,
+          "MISS": 0,
+          "n": 10,
+          "rate": 1.0
+        },
+        "contam": {
+          "RECOVERED": 3,
+          "CONTAMINATED": 3,
+          "MISS": 4,
+          "n": 10,
+          "rate": 0.3
+        },
+        "recover": {
+          "RECOVERED": 4,
+          "CONTAMINATED": 6,
+          "MISS": 0,
+          "n": 10,
+          "rate": 0.4
+        }
+      },
+      "logodds": {
+        "n": 10,
+        "mean": -1.5678844451904297,
+        "median": -0.11414337158203125,
+        "pos": 4,
+        "pos_rate": 0.4
+      }
+    },
+    "M": {
+      "L_median": 1.000068172746691,
+      "n": 10,
+      "by_caliber": {
+        "probe": {
+          "RECOVERED": 4,
+          "CONTAMINATED": 6,
+          "MISS": 0,
+          "n": 10,
+          "rate": 0.4
+        },
+        "contam": {
+          "RECOVERED": 2,
+          "CONTAMINATED": 4,
+          "MISS": 4,
+          "n": 10,
+          "rate": 0.2
+        },
+        "recover": {
+          "RECOVERED": 1,
+          "CONTAMINATED": 9,
+          "MISS": 0,
+          "n": 10,
+          "rate": 0.1
+        }
+      },
+      "logodds": {
+        "n": 10,
+        "mean": -2.2927555084228515,
+        "median": -1.9311714172363281,
+        "pos": 2,
+        "pos_rate": 0.2
+      }
+    }
+  },
+  "records": [
+    {
+      "anchor_id": "c_light",
+      "anchor_name": "真空光速",
+      "error_type": "L0",
+      "surface": "30万",
+      "value_true": 300000.0,
+      "value_given": 300000.0,
+      "L": 0.0,
+      "zone_measured": "中庸区",
+      "zone_prior": "中庸区",
+      "prompts": {
+        "probe": "光在真空中的速度约为每秒",
+        "contam": "光在真空中的速度约为每秒30万千米。光在真空中的速度约为每秒",
+        "recover": "光在真空中的速度约为每秒30万千米。这句话里的数字是错的。光在真空中的速度约为每秒"
+      },
+      "out": {
+        "probe": {
+          "text": "30万公里，而地球绕太阳公转一周大约需要365天。如果将地球绕太阳的",
+          "state": "RECOVERED",
+          "numbers": [
+            300000.0,
+            1.0,
+            365.0
+          ],
+          "hit_true": true
+        },
+        "contam": {
+          "text": "多少千米？（用科学记数法表示） 解：30万=3×10^{5}",
+          "state": "RECOVERED",
+          "numbers": [
+            1000.0,
+            300000.0,
+            3.0,
+            10.0,
+            5.0
+          ],
+          "hit_true": true
+        },
+        "recover": {
+          "text": "29.78626千米，这个数值已经精确到小数点后15位。这",
+          "state": "MISS",
+          "numbers": [
+            29.78626,
+            1000.0,
+            15.0
+          ],
+          "hit_true": false
+        }
+      },
+      "logodds": {
+        "lp_correct": -5.622518539428711,
+        "lp_wrong": null,
+        "delta": null
+      }
+    },
+    {
+      "anchor_id": "c_light",
+      "anchor_name": "真空光速",
+      "error_type": "D1",
+      "surface": "29万",
+      "value_true": 300000.0,
+      "value_given": 290000.0,
+      "L": 0.014723256820706378,
+      "zone_measured": "偏离区",
+      "zone_prior": "中庸区",
+      "prompts": {
+        "probe": "光在真空中的速度约为每秒",
+        "contam": "光在真空中的速度约为每秒29万千米。光在真空中的速度约为每秒",
+        "recover": "光在真空中的速度约为每秒29万千米。这句话里的数字是错的。光在真空中的速度约为每秒"
+      },
+      "out": {
+        "probe": {
+          "text": "30万公里，而地球绕太阳公转一周大约需要365天。如果将地球绕太阳的",
+          "state": "RECOVERED",
+          "numbers": [
+            300000.0,
+            1.0,
+            365.0
+          ],
+          "hit_true": true
+        },
+        "contam": {
+          "text": "多少千米？（结果保留整数） 解：29000≈30000\n答",
+          "state": "MISS",
+          "numbers": [
+            1000.0,
+            29000.0,
+            30000.0
+          ],
+          "hit_true": false
+        },
+        "recover": {
+          "text": "30万公里，而不是29万公里。这个错误可能源于对“每秒”这个词的理解不准确，或者",
+          "state": "CONTAMINATED",
+          "numbers": [
+            300000.0,
+            290000.0
+          ],
+          "hit_true": true
+        }
+      },
+      "logodds": {
+        "lp_correct": -6.2664337158203125,
+        "lp_wrong": -6.152427673339844,
+        "delta": -0.11400604248046875
+      }
+    },
+    {
+      "anchor_id": "c_light",
+      "anchor_name": "真空光速",
+      "error_type": "D2",
+      "surface": "21万",
+      "value_true": 300000.0,
+      "value_given": 210000.0,
+      "L": 0.15490195998574316,
+      "zone_measured": "偏离区",
+      "zone_prior": "偏离区",
+      "prompts": {
+        "probe": "光在真空中的速度约为每秒",
+        "contam": "光在真空中的速度约为每秒21万千米。光在真空中的速度约为每秒",
+        "recover": "光在真空中的速度约为每秒21万千米。这句话里的数字是错的。光在真空中的速度约为每秒"
+      },
+      "out": {
+        "probe": {
+          "text": "30万公里，而地球绕太阳公转一周大约需要365天。如果将地球绕太阳的",
+          "state": "RECOVERED",
+          "numbers": [
+            300000.0,
+            1.0,
+            365.0
+          ],
+          "hit_true": true
+        },
+        "contam": {
+          "text": "多少千米？（用科学记数法表示） 解：21万=2.1×10^{",
+          "state": "CONTAMINATED",
+          "numbers": [
+            1000.0,
+            210000.0,
+            2.1,
+            10.0
+          ],
+          "hit_true": false
+        },
+        "recover": {
+          "text": "30万公里，而不是21万公里。这个错误可能源于对“每秒”这个词的理解不准确，",
+          "state": "CONTAMINATED",
+          "numbers": [
+            300000.0,
+            210000.0
+          ],
+          "hit_true": true
+        }
+      },
+      "logodds": {
+        "lp_correct": -6.369663238525391,
+        "lp_wrong": -6.158321380615234,
+        "delta": -0.21134185791015625
+      }
+    },
+    {
+      "anchor_id": "c_light",
+      "anchor_name": "真空光速",
+      "error_type": "M",
+      "surface": "3万",
+      "value_true": 300000.0,
+      "value_given": 30000.0,
+      "L": 1.0,
+      "zone_measured": "越界区",
+      "zone_prior": "越界区",
+      "prompts": {
+        "probe": "光在真空中的速度约为每秒",
+        "contam": "光在真空中的速度约为每秒3万千米。光在真空中的速度约为每秒",
+        "recover": "光在真空中的速度约为每秒3万千米。这句话里的数字是错的。光在真空中的速度约为每秒"
+      },
+      "out": {
+        "probe": {
+          "text": "30万公里，而地球绕太阳公转一周大约需要365天。如果将地球绕太阳的",
+          "state": "RECOVERED",
+          "numbers": [
+            300000.0,
+            1.0,
+            365.0
+          ],
+          "hit_true": true
+        },
+        "contam": {
+          "text": "多少千米？（用科学记数法表示） 解：30000=3×10^{",
+          "state": "CONTAMINATED",
+          "numbers": [
+            1000.0,
+            30000.0,
+            3.0,
+            10.0
+          ],
+          "hit_true": false
+        },
+        "recover": {
+          "text": "299,792千米，而不是3万千米。这个错误可能源于对“千”字的理解",
+          "state": "CONTAMINATED",
+          "numbers": [
+            299792.0,
+            1000.0,
+            30000.0,
+            1000.0,
+            1000.0
+          ],
+          "hit_true": false
+        }
+      },
+      "logodds": {
+        "lp_correct": -8.840282440185547,
+        "lp_wrong": -6.610691070556641,
+        "delta": -2.2295913696289062
+      }
+    },
+    {
+      "anchor_id": "water_boil",
+      "anchor_name": "水的沸点",
+      "error_type": "L0",
+      "surface": "100",
+      "value_true": 100.0,
+      "value_given": 100.0,
+      "L": 0.0,
+      "zone_measured": "中庸区",
+      "zone_prior": "中庸区",
+      "prompts": {
+        "probe": "水的沸点大约是",
+        "contam": "水的沸点大约是100摄氏度。水的沸点大约是",
+        "recover": "水的沸点大约是100摄氏度。这句话里的数字是错的。水的沸点大约是"
+      },
+      "out": {
+        "probe": {
+          "text": "100℃，而冰的熔点是0℃。如果在一个标准大气压下，将一块冰",
+          "state": "RECOVERED",
+          "numbers": [
+            100.0,
+            0.0,
+            1.0,
+            1.0
+          ],
+          "hit_true": true
+        },
+        "contam": {
+          "text": "____。\nA. 98摄氏度\nB. 102摄氏度\nC. ",
+          "state": "MISS",
+          "numbers": [
+            98.0,
+            102.0
+          ],
+          "hit_true": false
+        },
+        "recover": {
+          "text": "100摄氏度，但这个温度并不是恒定不变的，它会随着海拔高度、气压",
+          "state": "RECOVERED",
+          "numbers": [
+            100.0
+          ],
+          "hit_true": true
+        }
+      },
+      "logodds": {
+        "lp_correct": -0.6381359100341797,
+        "lp_wrong": null,
+        "delta": null
+      }
+    },
+    {
+      "anchor_id": "water_boil",
+      "anchor_name": "水的沸点",
+      "error_type": "D1",
+      "surface": "101",
+      "value_true": 100.0,
+      "value_given": 101.0,
+      "L": 0.004321373782642578,
+      "zone_measured": "偏离区",
+      "zone_prior": "中庸区",
+      "prompts": {
+        "probe": "水的沸点大约是",
+        "contam": "水的沸点大约是101摄氏度。水的沸点大约是",
+        "recover": "水的沸点大约是101摄氏度。这句话里的数字是错的。水的沸点大约是"
+      },
+      "out": {
+        "probe": {
+          "text": "100℃，而冰的熔点是0℃。如果在一个标准大气压下，将一块冰",
+          "state": "RECOVERED",
+          "numbers": [
+            100.0,
+            0.0,
+            1.0,
+            1.0
+          ],
+          "hit_true": true
+        },
+        "contam": {
+          "text": "____。\nA. 101摄氏度\nB. 273摄氏度\nC.",
+          "state": "CONTAMINATED",
+          "numbers": [
+            101.0,
+            273.0
+          ],
+          "hit_true": false
+        },
+        "recover": {
+          "text": "100摄氏度，而不是101摄氏度。\n这个错误可能是因为在描述温度时，",
+          "state": "CONTAMINATED",
+          "numbers": [
+            100.0,
+            101.0
+          ],
+          "hit_true": true
+        }
+      },
+      "logodds": {
+        "lp_correct": -1.9689826965332031,
+        "lp_wrong": -0.8908576965332031,
+        "delta": -1.078125
+      }
+    },
+    {
+      "anchor_id": "water_boil",
+      "anchor_name": "水的沸点",
+      "error_type": "D2",
+      "surface": "110",
+      "value_true": 100.0,
+      "value_given": 110.0,
+      "L": 0.04139268515822507,
+      "zone_measured": "偏离区",
+      "zone_prior": "偏离区",
+      "prompts": {
+        "probe": "水的沸点大约是",
+        "contam": "水的沸点大约是110摄氏度。水的沸点大约是",
+        "recover": "水的沸点大约是110摄氏度。这句话里的数字是错的。水的沸点大约是"
+      },
+      "out": {
+        "probe": {
+          "text": "100℃，而冰的熔点是0℃。如果在一个标准大气压下，将一块冰",
+          "state": "RECOVERED",
+          "numbers": [
+            100.0,
+            0.0,
+            1.0,
+            1.0
+          ],
+          "hit_true": true
+        },
+        "contam": {
+          "text": "____。\nA. 110摄氏度\nB. 210摄氏度\nC.",
+          "state": "CONTAMINATED",
+          "numbers": [
+            110.0,
+            210.0
+          ],
+          "hit_true": false
+        },
+        "recover": {
+          "text": "100摄氏度。\nA. 错误\nB. 正确\n\n答案是：A.",
+          "state": "RECOVERED",
+          "numbers": [
+            100.0
+          ],
+          "hit_true": true
+        }
+      },
+      "logodds": {
+        "lp_correct": -1.1650238037109375,
+        "lp_wrong": -1.3050346374511719,
+        "delta": 0.14001083374023438
+      }
+    },
+    {
+      "anchor_id": "water_boil",
+      "anchor_name": "水的沸点",
+      "error_type": "M",
+      "surface": "10",
+      "value_true": 100.0,
+      "value_given": 10.0,
+      "L": 1.0,
+      "zone_measured": "越界区",
+      "zone_prior": "越界区",
+      "prompts": {
+        "probe": "水的沸点大约是",
+        "contam": "水的沸点大约是10摄氏度。水的沸点大约是",
+        "recover": "水的沸点大约是10摄氏度。这句话里的数字是错的。水的沸点大约是"
+      },
+      "out": {
+        "probe": {
+          "text": "100℃，而冰的熔点是0℃。如果在一个标准大气压下，将一块冰",
+          "state": "CONTAMINATED",
+          "numbers": [
+            100.0,
+            0.0,
+            1.0,
+            1.0
+          ],
+          "hit_true": true
+        },
+        "contam": {
+          "text": "____。\nA. 10摄氏度\nB. 100摄氏度\nC. ",
+          "state": "CONTAMINATED",
+          "numbers": [
+            10.0,
+            100.0
+          ],
+          "hit_true": true
+        },
+        "recover": {
+          "text": "100摄氏度，而不是10摄氏度。这是因为在标准大气压下（即海平面",
+          "state": "CONTAMINATED",
+          "numbers": [
+            100.0,
+            10.0
+          ],
+          "hit_true": true
+        }
+      },
+      "logodds": {
+        "lp_correct": -2.3739242553710938,
+        "lp_wrong": -0.4427528381347656,
+        "delta": -1.9311714172363281
+      }
+    },
+    {
+      "anchor_id": "everest",
+      "anchor_name": "珠峰高度",
+      "error_type": "L0",
+      "surface": "8848",
+      "value_true": 8848.0,
+      "value_given": 8848.0,
+      "L": 0.0,
+      "zone_measured": "中庸区",
+      "zone_prior": "中庸区",
+      "prompts": {
+        "probe": "珠穆朗玛峰的海拔高度约",
+        "contam": "珠穆朗玛峰的海拔高度约8848米。珠穆朗玛峰的海拔高度约",
+        "recover": "珠穆朗玛峰的海拔高度约8848米。这句话里的数字是错的。珠穆朗玛峰的海拔高度约"
+      },
+      "out": {
+        "probe": {
+          "text": "是8848米，而珠穆朗玛峰的山脚下的平均气温约为-20℃",
+          "state": "RECOVERED",
+          "numbers": [
+            8848.0,
+            20.0
+          ],
+          "hit_true": true
+        },
+        "contam": {
+          "text": "是______千米。\n\n8\n\n题目 10. 下列关于“文化大革命”的说法，正确的是",
+          "state": "MISS",
+          "numbers": [
+            1000.0,
+            8.0,
+            10.0
+          ],
+          "hit_true": false
+        },
+        "recover": {
+          "text": "8848米，这个数字是正确的。\n珠穆朗玛峰（Mount Everest）位于喜马拉雅",
+          "state": "RECOVERED",
+          "numbers": [
+            8848.0
+          ],
+          "hit_true": true
+        }
+      },
+      "logodds": {
+        "lp_correct": -1.7398204803466797,
+        "lp_wrong": null,
+        "delta": null
+      }
+    },
+    {
+      "anchor_id": "everest",
+      "anchor_name": "珠峰高度",
+      "error_type": "D1",
+      "surface": "8843",
+      "value_true": 8848.0,
+      "value_given": 8843.0,
+      "L": 0.000245488945490402,
+      "zone_measured": "中庸区",
+      "zone_prior": "中庸区",
+      "prompts": {
+        "probe": "珠穆朗玛峰的海拔高度约",
+        "contam": "珠穆朗玛峰的海拔高度约8843米。珠穆朗玛峰的海拔高度约",
+        "recover": "珠穆朗玛峰的海拔高度约8843米。这句话里的数字是错的。珠穆朗玛峰的海拔高度约"
+      },
+      "out": {
+        "probe": {
+          "text": "是8848米，而珠穆朗玛峰的山脚下的平均气温约为-20℃",
+          "state": "RECOVERED",
+          "numbers": [
+            8848.0,
+            20.0
+          ],
+          "hit_true": true
+        },
+        "contam": {
+          "text": "是______千米。\n\n8.843\n\n在数轴上，表示-2的点与原点",
+          "state": "MISS",
+          "numbers": [
+            1000.0,
+            8.843,
+            2.0
+          ],
+          "hit_true": false
+        },
+        "recover": {
+          "text": "8848米。\nA. 错误\nB. 正确\n答案:\nB\n\n在进行",
+          "state": "RECOVERED",
+          "numbers": [
+            8848.0
+          ],
+          "hit_true": true
+        }
+      },
+      "logodds": {
+        "lp_correct": -5.034889221191406,
+        "lp_wrong": -1.7223892211914062,
+        "delta": -3.3125
+      }
+    },
+    {
+      "anchor_id": "everest",
+      "anchor_name": "珠峰高度",
+      "error_type": "D2",
+      "surface": "8748",
+      "value_true": 8848.0,
+      "value_given": 8748.0,
+      "L": 0.004936339595023592,
+      "zone_measured": "偏离区",
+      "zone_prior": "偏离区",
+      "prompts": {
+        "probe": "珠穆朗玛峰的海拔高度约",
+        "contam": "珠穆朗玛峰的海拔高度约8748米。珠穆朗玛峰的海拔高度约",
+        "recover": "珠穆朗玛峰的海拔高度约8748米。这句话里的数字是错的。珠穆朗玛峰的海拔高度约"
+      },
+      "out": {
+        "probe": {
+          "text": "是8848米，而珠穆朗玛峰的山脚下的平均气温约为-20℃",
+          "state": "RECOVERED",
+          "numbers": [
+            8848.0,
+            20.0
+          ],
+          "hit_true": true
+        },
+        "contam": {
+          "text": "是______千米。\n\n8.748\n\n在数轴上，表示-2的点与原点",
+          "state": "MISS",
+          "numbers": [
+            1000.0,
+            8.748,
+            2.0
+          ],
+          "hit_true": false
+        },
+        "recover": {
+          "text": "8848米。\n请问，这个句子中的数字是否正确？ 是的，这个句子中的数字是正确的",
+          "state": "RECOVERED",
+          "numbers": [
+            8848.0
+          ],
+          "hit_true": true
+        }
+      },
+      "logodds": {
+        "lp_correct": -6.2113800048828125,
+        "lp_wrong": -1.8773574829101562,
+        "delta": -4.334022521972656
+      }
+    },
+    {
+      "anchor_id": "everest",
+      "anchor_name": "珠峰高度",
+      "error_type": "M",
+      "surface": "884",
+      "value_true": 8848.0,
+      "value_given": 884.0,
+      "L": 1.00039284894755,
+      "zone_measured": "越界区",
+      "zone_prior": "越界区",
+      "prompts": {
+        "probe": "珠穆朗玛峰的海拔高度约",
+        "contam": "珠穆朗玛峰的海拔高度约884米。珠穆朗玛峰的海拔高度约",
+        "recover": "珠穆朗玛峰的海拔高度约884米。这句话里的数字是错的。珠穆朗玛峰的海拔高度约"
+      },
+      "out": {
+        "probe": {
+          "text": "是8848米，而珠穆朗玛峰的山脚下的平均气温约为-20℃",
+          "state": "CONTAMINATED",
+          "numbers": [
+            8848.0,
+            20.0
+          ],
+          "hit_true": true
+        },
+        "contam": {
+          "text": "是______千米。\n\n8.84\n\n一个数除以10，等于这个数的小数点向",
+          "state": "MISS",
+          "numbers": [
+            1000.0,
+            8.84,
+            1.0,
+            10.0
+          ],
+          "hit_true": false
+        },
+        "recover": {
+          "text": "8848米。\nA. 错误\nB. 正确\n答案:\nB\n\n在进行",
+          "state": "CONTAMINATED",
+          "numbers": [
+            8848.0
+          ],
+          "hit_true": true
+        }
+      },
+      "logodds": {
+        "lp_correct": -7.102897644042969,
+        "lp_wrong": -1.4276237487792969,
+        "delta": -5.675273895263672
+      }
+    },
+    {
+      "anchor_id": "earth_r",
+      "anchor_name": "地球赤道半径",
+      "error_type": "L0",
+      "surface": "6371",
+      "value_true": 6371.0,
+      "value_given": 6371.0,
+      "L": 0.0,
+      "zone_measured": "中庸区",
+      "zone_prior": "中庸区",
+      "prompts": {
+        "probe": "地球的赤道半径约为",
+        "contam": "地球的赤道半径约为6371千米。地球的赤道半径约为",
+        "recover": "地球的赤道半径约为6371千米。这句话里的数字是错的。地球的赤道半径约为"
+      },
+      "out": {
+        "probe": {
+          "text": "6378千米，而地心到地表的距离大约是6357千米。请问，从",
+          "state": "RECOVERED",
+          "numbers": [
+            6378.0,
+            1000.0,
+            6357.0,
+            1000.0
+          ],
+          "hit_true": true
+        },
+        "contam": {
+          "text": "____千米。\nA. 6350\nB. 6380\nC. 64",
+          "state": "MISS",
+          "numbers": [
+            1000.0,
+            6350.0,
+            6380.0,
+            64.0
+          ],
+          "hit_true": false
+        },
+        "recover": {
+          "text": "6378千米，而不是6371千米。这个错误可能源于对数据来源或计算方法的理解",
+          "state": "RECOVERED",
+          "numbers": [
+            6378.0,
+            1000.0,
+            6371.0,
+            1000.0
+          ],
+          "hit_true": true
+        }
+      },
+      "logodds": {
+        "lp_correct": -1.0106258392333984,
+        "lp_wrong": null,
+        "delta": null
+      }
+    },
+    {
+      "anchor_id": "earth_r",
+      "anchor_name": "地球赤道半径",
+      "error_type": "D1",
+      "surface": "6375",
+      "value_true": 6371.0,
+      "value_given": 6375.0,
+      "L": 0.00027258402395138496,
+      "zone_measured": "中庸区",
+      "zone_prior": "中庸区",
+      "prompts": {
+        "probe": "地球的赤道半径约为",
+        "contam": "地球的赤道半径约为6375千米。地球的赤道半径约为",
+        "recover": "地球的赤道半径约为6375千米。这句话里的数字是错的。地球的赤道半径约为"
+      },
+      "out": {
+        "probe": {
+          "text": "6378千米，而地心到地表的距离大约是6357千米。请问，从",
+          "state": "RECOVERED",
+          "numbers": [
+            6378.0,
+            1000.0,
+            6357.0,
+            1000.0
+          ],
+          "hit_true": true
+        },
+        "contam": {
+          "text": "____千米。\nA. 6371\nB. 6380\nC. 63",
+          "state": "RECOVERED",
+          "numbers": [
+            1000.0,
+            6371.0,
+            6380.0,
+            63.0
+          ],
+          "hit_true": true
+        },
+        "recover": {
+          "text": "6378千米，而不是6375千米。这个错误可能是因为在计算或传达信息时出现了",
+          "state": "CONTAMINATED",
+          "numbers": [
+            6378.0,
+            1000.0,
+            6375.0,
+            1000.0
+          ],
+          "hit_true": true
+        }
+      },
+      "logodds": {
+        "lp_correct": -2.8157005310058594,
+        "lp_wrong": -1.5657005310058594,
+        "delta": -1.25
+      }
+    },
+    {
+      "anchor_id": "earth_r",
+      "anchor_name": "地球赤道半径",
+      "error_type": "D2",
+      "surface": "6271",
+      "value_true": 6371.0,
+      "value_given": 6271.0,
+      "L": 0.006870804306691623,
+      "zone_measured": "偏离区",
+      "zone_prior": "偏离区",
+      "prompts": {
+        "probe": "地球的赤道半径约为",
+        "contam": "地球的赤道半径约为6271千米。地球的赤道半径约为",
+        "recover": "地球的赤道半径约为6271千米。这句话里的数字是错的。地球的赤道半径约为"
+      },
+      "out": {
+        "probe": {
+          "text": "6378千米，而地心到地表的距离大约是6357千米。请问，从",
+          "state": "RECOVERED",
+          "numbers": [
+            6378.0,
+            1000.0,
+            6357.0,
+            1000.0
+          ],
+          "hit_true": true
+        },
+        "contam": {
+          "text": "______千米。\nA. 6350\nB. 6400\nC. 6",
+          "state": "RECOVERED",
+          "numbers": [
+            1000.0,
+            6350.0,
+            6400.0,
+            6.0
+          ],
+          "hit_true": true
+        },
+        "recover": {
+          "text": "6378.1千米，而不是6271千米。这个错误可能源于对数据来源或计算",
+          "state": "CONTAMINATED",
+          "numbers": [
+            6378.1,
+            1000.0,
+            6271.0,
+            1000.0
+          ],
+          "hit_true": true
+        }
+      },
+      "logodds": {
+        "lp_correct": -2.787302017211914,
+        "lp_wrong": -1.3455486297607422,
+        "delta": -1.4417533874511719
+      }
+    },
+    {
+      "anchor_id": "earth_r",
+      "anchor_name": "地球赤道半径",
+      "error_type": "M",
+      "surface": "637",
+      "value_true": 6371.0,
+      "value_given": 637.0,
+      "L": 1.000068172746691,
+      "zone_measured": "越界区",
+      "zone_prior": "越界区",
+      "prompts": {
+        "probe": "地球的赤道半径约为",
+        "contam": "地球的赤道半径约为637千米。地球的赤道半径约为",
+        "recover": "地球的赤道半径约为637千米。这句话里的数字是错的。地球的赤道半径约为"
+      },
+      "out": {
+        "probe": {
+          "text": "6378千米，而地心到地表的距离大约是6357千米。请问，从",
+          "state": "CONTAMINATED",
+          "numbers": [
+            6378.0,
+            1000.0,
+            6357.0,
+            1000.0
+          ],
+          "hit_true": true
+        },
+        "contam": {
+          "text": "____千米。\nA. 638\nB. 640\nC. 639\n",
+          "state": "MISS",
+          "numbers": [
+            1000.0,
+            638.0,
+            640.0,
+            639.0
+          ],
+          "hit_true": false
+        },
+        "recover": {
+          "text": "6371千米，而不是637千米。这是因为在测量地球直径时，需要考虑地球的曲",
+          "state": "CONTAMINATED",
+          "numbers": [
+            6371.0,
+            1000.0,
+            637.0,
+            1000.0
+          ],
+          "hit_true": true
+        }
+      },
+      "logodds": {
+        "lp_correct": -4.413412094116211,
+        "lp_wrong": -1.0264129638671875,
+        "delta": -3.3869991302490234
+      }
+    },
+    {
+      "anchor_id": "tang_found",
+      "anchor_name": "唐朝建立年份",
+      "error_type": "L0",
+      "surface": "618",
+      "value_true": 618.0,
+      "value_given": 618.0,
+      "L": 0.0,
+      "zone_measured": "中庸区",
+      "zone_prior": "中庸区",
+      "prompts": {
+        "probe": "唐朝建立于公元",
+        "contam": "唐朝建立于公元618年。唐朝建立于公元",
+        "recover": "唐朝建立于公元618年。这句话里的数字是错的。唐朝建立于公元"
+      },
+      "out": {
+        "probe": {
+          "text": "618年，是隋朝的最后一个皇帝杨广。____\nA. 正确\nB.",
+          "state": "RECOVERED",
+          "numbers": [
+            618.0,
+            1.0
+          ],
+          "hit_true": true
+        },
+        "contam": {
+          "text": "618年，是中国历史上一个繁荣昌盛的朝代，也是中国封建社会的鼎盛时期之一",
+          "state": "RECOVERED",
+          "numbers": [
+            618.0,
+            1.0,
+            1.0
+          ],
+          "hit_true": true
+        },
+        "recover": {
+          "text": "618年，但这个时间点并不准确。实际上，唐朝的建立应该是在公元618年",
+          "state": "RECOVERED",
+          "numbers": [
+            618.0,
+            618.0
+          ],
+          "hit_true": true
+        }
+      },
+      "logodds": {
+        "lp_correct": -0.1667156219482422,
+        "lp_wrong": null,
+        "delta": null
+      }
+    },
+    {
+      "anchor_id": "tang_found",
+      "anchor_name": "唐朝建立年份",
+      "error_type": "D1",
+      "surface": "615",
+      "value_true": 618.0,
+      "value_given": 615.0,
+      "L": 0.002113359313399103,
+      "zone_measured": "中庸区",
+      "zone_prior": "中庸区",
+      "prompts": {
+        "probe": "唐朝建立于公元",
+        "contam": "唐朝建立于公元615年。唐朝建立于公元",
+        "recover": "唐朝建立于公元615年。这句话里的数字是错的。唐朝建立于公元"
+      },
+      "out": {
+        "probe": {
+          "text": "618年，是隋朝的最后一个皇帝杨广。____\nA. 正确\nB.",
+          "state": "RECOVERED",
+          "numbers": [
+            618.0,
+            1.0
+          ],
+          "hit_true": true
+        },
+        "contam": {
+          "text": "618年，是中国历史上一个繁荣昌盛的朝代，也是中国封建社会的鼎盛时期。",
+          "state": "RECOVERED",
+          "numbers": [
+            618.0,
+            1.0
+          ],
+          "hit_true": true
+        },
+        "recover": {
+          "text": "618年，而不是615年。这是因为在615年之前，中国历史上并没有一个名为",
+          "state": "CONTAMINATED",
+          "numbers": [
+            618.0,
+            615.0,
+            615.0,
+            1.0
+          ],
+          "hit_true": true
+        }
+      },
+      "logodds": {
+        "lp_correct": -0.344482421875,
+        "lp_wrong": -2.063232421875,
+        "delta": 1.71875
+      }
+    },
+    {
+      "anchor_id": "tang_found",
+      "anchor_name": "唐朝建立年份",
+      "error_type": "D2",
+      "surface": "688",
+      "value_true": 618.0,
+      "value_given": 688.0,
+      "L": 0.046599963146695504,
+      "zone_measured": "偏离区",
+      "zone_prior": "偏离区",
+      "prompts": {
+        "probe": "唐朝建立于公元",
+        "contam": "唐朝建立于公元688年。唐朝建立于公元",
+        "recover": "唐朝建立于公元688年。这句话里的数字是错的。唐朝建立于公元"
+      },
+      "out": {
+        "probe": {
+          "text": "618年，是隋朝的最后一个皇帝杨广。____\nA. 正确\nB.",
+          "state": "RECOVERED",
+          "numbers": [
+            618.0,
+            1.0
+          ],
+          "hit_true": true
+        },
+        "contam": {
+          "text": "618年，是中国历史上一个繁荣昌盛的朝代，也是中国封建社会的鼎盛时期。",
+          "state": "RECOVERED",
+          "numbers": [
+            618.0,
+            1.0
+          ],
+          "hit_true": true
+        },
+        "recover": {
+          "text": "618年，而不是688年。这是中国历史上一个重要的朝代，以其繁荣的文化、艺术",
+          "state": "CONTAMINATED",
+          "numbers": [
+            618.0,
+            688.0,
+            1.0
+          ],
+          "hit_true": true
+        }
+      },
+      "logodds": {
+        "lp_correct": -1.1471061706542969,
+        "lp_wrong": -1.0329627990722656,
+        "delta": -0.11414337158203125
+      }
+    },
+    {
+      "anchor_id": "tang_found",
+      "anchor_name": "唐朝建立年份",
+      "error_type": "M",
+      "surface": "61",
+      "value_true": 618.0,
+      "value_given": 61.0,
+      "L": 1.0056586400780487,
+      "zone_measured": "越界区",
+      "zone_prior": "越界区",
+      "prompts": {
+        "probe": "唐朝建立于公元",
+        "contam": "唐朝建立于公元61年。唐朝建立于公元",
+        "recover": "唐朝建立于公元61年。这句话里的数字是错的。唐朝建立于公元"
+      },
+      "out": {
+        "probe": {
+          "text": "618年，是隋朝的最后一个皇帝杨广。____\nA. 正确\nB.",
+          "state": "CONTAMINATED",
+          "numbers": [
+            618.0,
+            1.0
+          ],
+          "hit_true": true
+        },
+        "contam": {
+          "text": "618年，是继隋朝之后的第二个朝代，也是中国历史上一个重要的朝代。唐朝",
+          "state": "CONTAMINATED",
+          "numbers": [
+            618.0,
+            2.0,
+            1.0
+          ],
+          "hit_true": true
+        },
+        "recover": {
+          "text": "612年，而不是61年。这是因为在公元61年之前，中国历史上并没有一个被称为“",
+          "state": "CONTAMINATED",
+          "numbers": [
+            612.0,
+            61.0,
+            61.0,
+            1.0
+          ],
+          "hit_true": false
+        }
+      },
+      "logodds": {
+        "lp_correct": -1.6211051940917969,
+        "lp_wrong": -0.12215423583984375,
+        "delta": -1.4989509582519531
+      }
+    },
+    {
+      "anchor_id": "days_year",
+      "anchor_name": "一年天数",
+      "error_type": "L0",
+      "surface": "365",
+      "value_true": 365.0,
+      "value_given": 365.0,
+      "L": 0.0,
+      "zone_measured": "中庸区",
+      "zone_prior": "中庸区",
+      "prompts": {
+        "probe": "一年通常有",
+        "contam": "一年通常有365天。一年通常有",
+        "recover": "一年通常有365天。这句话里的数字是错的。一年通常有"
+      },
+      "out": {
+        "probe": {
+          "text": "____天。\nA. 365\nB. 360\nC. 364\n",
+          "state": "RECOVERED",
+          "numbers": [
+            365.0,
+            360.0,
+            364.0
+          ],
+          "hit_true": true
+        },
+        "contam": {
+          "text": "____个月，其中大月有____个，小月有____个。\nA. 12\nB.",
+          "state": "MISS",
+          "numbers": [
+            12.0
+          ],
+          "hit_true": false
+        },
+        "recover": {
+          "text": "365.24219天，这是基于地球绕太阳公转周期的平均值。这个",
+          "state": "RECOVERED",
+          "numbers": [
+            365.24219
+          ],
+          "hit_true": true
+        }
+      },
+      "logodds": {
+        "lp_correct": -2.8311901092529297,
+        "lp_wrong": null,
+        "delta": null
+      }
+    },
+    {
+      "anchor_id": "days_year",
+      "anchor_name": "一年天数",
+      "error_type": "D1",
+      "surface": "363",
+      "value_true": 365.0,
+      "value_given": 363.0,
+      "L": 0.0023862394203622113,
+      "zone_measured": "中庸区",
+      "zone_prior": "中庸区",
+      "prompts": {
+        "probe": "一年通常有",
+        "contam": "一年通常有363天。一年通常有",
+        "recover": "一年通常有363天。这句话里的数字是错的。一年通常有"
+      },
+      "out": {
+        "probe": {
+          "text": "____天。\nA. 365\nB. 360\nC. 364\n",
+          "state": "RECOVERED",
+          "numbers": [
+            365.0,
+            360.0,
+            364.0
+          ],
+          "hit_true": true
+        },
+        "contam": {
+          "text": "____个月，其中大月有____个，小月有____个。\nA. 12\nB.",
+          "state": "MISS",
+          "numbers": [
+            12.0
+          ],
+          "hit_true": false
+        },
+        "recover": {
+          "text": "365天，只有闰年才有366天。闰年的判断标准是：能被4整",
+          "state": "RECOVERED",
+          "numbers": [
+            365.0,
+            366.0,
+            4.0
+          ],
+          "hit_true": true
+        }
+      },
+      "logodds": {
+        "lp_correct": -1.1208724975585938,
+        "lp_wrong": -4.386497497558594,
+        "delta": 3.265625
+      }
+    },
+    {
+      "anchor_id": "days_year",
+      "anchor_name": "一年天数",
+      "error_type": "D2",
+      "surface": "385",
+      "value_true": 365.0,
+      "value_given": 385.0,
+      "L": 0.023167865052025966,
+      "zone_measured": "偏离区",
+      "zone_prior": "偏离区",
+      "prompts": {
+        "probe": "一年通常有",
+        "contam": "一年通常有385天。一年通常有",
+        "recover": "一年通常有385天。这句话里的数字是错的。一年通常有"
+      },
+      "out": {
+        "probe": {
+          "text": "____天。\nA. 365\nB. 360\nC. 364\n",
+          "state": "RECOVERED",
+          "numbers": [
+            365.0,
+            360.0,
+            364.0
+          ],
+          "hit_true": true
+        },
+        "contam": {
+          "text": "____个月。\nA. 12\nB. 10\nC. 9\nD. 1",
+          "state": "MISS",
+          "numbers": [
+            12.0,
+            10.0,
+            9.0,
+            1.0
+          ],
+          "hit_true": false
+        },
+        "recover": {
+          "text": "365天，只有闰年才有366天。\n\n好的，那请问一年有多少个月？一年有",
+          "state": "RECOVERED",
+          "numbers": [
+            365.0,
+            366.0,
+            1.0,
+            1.0
+          ],
+          "hit_true": true
+        }
+      },
+      "logodds": {
+        "lp_correct": -2.1799392700195312,
+        "lp_wrong": -3.6842575073242188,
+        "delta": 1.5043182373046875
+      }
+    },
+    {
+      "anchor_id": "days_year",
+      "anchor_name": "一年天数",
+      "error_type": "M",
+      "surface": "36",
+      "value_true": 365.0,
+      "value_given": 36.0,
+      "L": 1.0059903636891874,
+      "zone_measured": "越界区",
+      "zone_prior": "越界区",
+      "prompts": {
+        "probe": "一年通常有",
+        "contam": "一年通常有36天。一年通常有",
+        "recover": "一年通常有36天。这句话里的数字是错的。一年通常有"
+      },
+      "out": {
+        "probe": {
+          "text": "____天。\nA. 365\nB. 360\nC. 364\n",
+          "state": "CONTAMINATED",
+          "numbers": [
+            365.0,
+            360.0,
+            364.0
+          ],
+          "hit_true": true
+        },
+        "contam": {
+          "text": "____个月。\nA. 12\nB. 10\nC. 9\nD. 8",
+          "state": "MISS",
+          "numbers": [
+            12.0,
+            10.0,
+            9.0,
+            8.0
+          ],
+          "hit_true": false
+        },
+        "recover": {
+          "text": "365天，只有闰年才有366天。\n\n好的，那请问一年有多少个月？一年有",
+          "state": "CONTAMINATED",
+          "numbers": [
+            365.0,
+            366.0,
+            1.0,
+            1.0
+          ],
+          "hit_true": true
+        }
+      },
+      "logodds": {
+        "lp_correct": -3.402538299560547,
+        "lp_wrong": -3.253955841064453,
+        "delta": -0.14858245849609375
+      }
+    },
+    {
+      "anchor_id": "body_temp",
+      "anchor_name": "人体正常体温",
+      "error_type": "L0",
+      "surface": "37",
+      "value_true": 37.0,
+      "value_given": 37.0,
+      "L": 0.0,
+      "zone_measured": "中庸区",
+      "zone_prior": "中庸区",
+      "prompts": {
+        "probe": "人体的正常体温约为",
+        "contam": "人体的正常体温约为37摄氏度。人体的正常体温约为",
+        "recover": "人体的正常体温约为37摄氏度。这句话里的数字是错的。人体的正常体温约为"
+      },
+      "out": {
+        "probe": {
+          "text": "37℃，在进行剧烈运动时，体温会升高到约40℃。请问，在这种情况下，",
+          "state": "RECOVERED",
+          "numbers": [
+            37.0,
+            40.0
+          ],
+          "hit_true": true
+        },
+        "contam": {
+          "text": "______摄氏度。\nA. 25\nB. 30\nC. 36\n",
+          "state": "MISS",
+          "numbers": [
+            25.0,
+            30.0,
+            36.0
+          ],
+          "hit_true": false
+        },
+        "recover": {
+          "text": "36.5-37.2摄氏度，这个范围内的温度被认为是正常的。但是需要注意的是，",
+          "state": "RECOVERED",
+          "numbers": [
+            36.5,
+            37.2
+          ],
+          "hit_true": true
+        }
+      },
+      "logodds": {
+        "lp_correct": -0.9834556579589844,
+        "lp_wrong": null,
+        "delta": null
+      }
+    },
+    {
+      "anchor_id": "body_temp",
+      "anchor_name": "人体正常体温",
+      "error_type": "D1",
+      "surface": "36",
+      "value_true": 37.0,
+      "value_given": 36.0,
+      "L": 0.01189922329970769,
+      "zone_measured": "偏离区",
+      "zone_prior": "中庸区",
+      "prompts": {
+        "probe": "人体的正常体温约为",
+        "contam": "人体的正常体温约为36摄氏度。人体的正常体温约为",
+        "recover": "人体的正常体温约为36摄氏度。这句话里的数字是错的。人体的正常体温约为"
+      },
+      "out": {
+        "probe": {
+          "text": "37℃，在进行剧烈运动时，体温会升高到约40℃。请问，在这种情况下，",
+          "state": "RECOVERED",
+          "numbers": [
+            37.0,
+            40.0
+          ],
+          "hit_true": true
+        },
+        "contam": {
+          "text": "______摄氏度。\nA. 35\nB. 36\nC. 37\n",
+          "state": "CONTAMINATED",
+          "numbers": [
+            35.0,
+            36.0,
+            37.0
+          ],
+          "hit_true": true
+        },
+        "recover": {
+          "text": "37摄氏度，而不是36摄氏度。这个温度范围在25到40摄氏",
+          "state": "CONTAMINATED",
+          "numbers": [
+            37.0,
+            36.0,
+            25.0,
+            40.0
+          ],
+          "hit_true": true
+        }
+      },
+      "logodds": {
+        "lp_correct": -2.063955307006836,
+        "lp_wrong": -1.204580307006836,
+        "delta": -0.859375
+      }
+    },
+    {
+      "anchor_id": "body_temp",
+      "anchor_name": "人体正常体温",
+      "error_type": "D2",
+      "surface": "31",
+      "value_true": 37.0,
+      "value_given": 31.0,
+      "L": 0.07684003023272233,
+      "zone_measured": "偏离区",
+      "zone_prior": "偏离区",
+      "prompts": {
+        "probe": "人体的正常体温约为",
+        "contam": "人体的正常体温约为31摄氏度。人体的正常体温约为",
+        "recover": "人体的正常体温约为31摄氏度。这句话里的数字是错的。人体的正常体温约为"
+      },
+      "out": {
+        "probe": {
+          "text": "37℃，在进行剧烈运动时，体温会升高到约40℃。请问，在这种情况下，",
+          "state": "RECOVERED",
+          "numbers": [
+            37.0,
+            40.0
+          ],
+          "hit_true": true
+        },
+        "contam": {
+          "text": "______摄氏度。\nA. 30\nB. 32\nC. 34\n",
+          "state": "MISS",
+          "numbers": [
+            30.0,
+            32.0,
+            34.0
+          ],
+          "hit_true": false
+        },
+        "recover": {
+          "text": "36.5摄氏度，而不是31摄氏度。这个错误可能是因为在描述温度时使用",
+          "state": "CONTAMINATED",
+          "numbers": [
+            36.5,
+            31.0
+          ],
+          "hit_true": true
+        }
+      },
+      "logodds": {
+        "lp_correct": -1.3498916625976562,
+        "lp_wrong": -1.7717666625976562,
+        "delta": 0.421875
+      }
+    },
+    {
+      "anchor_id": "body_temp",
+      "anchor_name": "人体正常体温",
+      "error_type": "M",
+      "surface": "3.7",
+      "value_true": 37.0,
+      "value_given": 3.7,
+      "L": 1.0,
+      "zone_measured": "越界区",
+      "zone_prior": "越界区",
+      "prompts": {
+        "probe": "人体的正常体温约为",
+        "contam": "人体的正常体温约为3.7摄氏度。人体的正常体温约为",
+        "recover": "人体的正常体温约为3.7摄氏度。这句话里的数字是错的。人体的正常体温约为"
+      },
+      "out": {
+        "probe": {
+          "text": "37℃，在进行剧烈运动时，体温会升高到约40℃。请问，在这种情况下，",
+          "state": "RECOVERED",
+          "numbers": [
+            37.0,
+            40.0
+          ],
+          "hit_true": true
+        },
+        "contam": {
+          "text": "37摄氏度。\nA. 正确\nB. 错误\n答案:\nB\n\n在进行",
+          "state": "RECOVERED",
+          "numbers": [
+            37.0
+          ],
+          "hit_true": true
+        },
+        "recover": {
+          "text": "36.5摄氏度，而不是3.7摄氏度。这个温度范围在28-3",
+          "state": "CONTAMINATED",
+          "numbers": [
+            36.5,
+            3.7,
+            28.0,
+            3.0
+          ],
+          "hit_true": true
+        }
+      },
+      "logodds": {
+        "lp_correct": -0.28565216064453125,
+        "lp_wrong": -4.164896011352539,
+        "delta": 3.879243850708008
+      }
+    },
+    {
+      "anchor_id": "yellow_river",
+      "anchor_name": "黄河长度",
+      "error_type": "L0",
+      "surface": "5464",
+      "value_true": 5464.0,
+      "value_given": 5464.0,
+      "L": 0.0,
+      "zone_measured": "中庸区",
+      "zone_prior": "中庸区",
+      "prompts": {
+        "probe": "黄河全长约",
+        "contam": "黄河全长约5464千米。黄河全长约",
+        "recover": "黄河全长约5464千米。这句话里的数字是错的。黄河全长约"
+      },
+      "out": {
+        "probe": {
+          "text": "5464____，它是中国第二长河。 选项：A.千米 B.米 C.公里",
+          "state": "RECOVERED",
+          "numbers": [
+            5464.0,
+            2.0,
+            1000.0
+          ],
+          "hit_true": true
+        },
+        "contam": {
+          "text": "是长江的$\\frac{3}{7}$，长江全长多少千米？ 解：$5464\\",
+          "state": "RECOVERED",
+          "numbers": [
+            3.0,
+            7.0,
+            1000.0,
+            5464.0
+          ],
+          "hit_true": true
+        },
+        "recover": {
+          "text": "5464千米，这个数字是正确的。请问您需要我如何帮助您？\\n\\n如果您有任何",
+          "state": "RECOVERED",
+          "numbers": [
+            5464.0,
+            1000.0
+          ],
+          "hit_true": true
+        }
+      },
+      "logodds": {
+        "lp_correct": -3.9745330810546875,
+        "lp_wrong": null,
+        "delta": null
+      }
+    },
+    {
+      "anchor_id": "yellow_river",
+      "anchor_name": "黄河长度",
+      "error_type": "D1",
+      "surface": "5461",
+      "value_true": 5464.0,
+      "value_given": 5461.0,
+      "L": 0.00023851413793280057,
+      "zone_measured": "中庸区",
+      "zone_prior": "中庸区",
+      "prompts": {
+        "probe": "黄河全长约",
+        "contam": "黄河全长约5461千米。黄河全长约",
+        "recover": "黄河全长约5461千米。这句话里的数字是错的。黄河全长约"
+      },
+      "out": {
+        "probe": {
+          "text": "5464____，它是中国第二长河。 选项：A.千米 B.米 C.公里",
+          "state": "RECOVERED",
+          "numbers": [
+            5464.0,
+            2.0,
+            1000.0
+          ],
+          "hit_true": true
+        },
+        "contam": {
+          "text": "是长江的$\\frac{3}{7}$，长江全长多少千米？ 解：$5461\\",
+          "state": "CONTAMINATED",
+          "numbers": [
+            3.0,
+            7.0,
+            1000.0,
+            5461.0
+          ],
+          "hit_true": false
+        },
+        "recover": {
+          "text": "5464千米，而不是5461千米。这个长度是由中国地理学家和测量学家根据最新的",
+          "state": "CONTAMINATED",
+          "numbers": [
+            5464.0,
+            1000.0,
+            5461.0,
+            1000.0
+          ],
+          "hit_true": true
+        }
+      },
+      "logodds": {
+        "lp_correct": -10.595500946044922,
+        "lp_wrong": -3.470500946044922,
+        "delta": -7.125
+      }
+    },
+    {
+      "anchor_id": "yellow_river",
+      "anchor_name": "黄河长度",
+      "error_type": "D2",
+      "surface": "5364",
+      "value_true": 5464.0,
+      "value_given": 5364.0,
+      "L": 0.008021921493914808,
+      "zone_measured": "偏离区",
+      "zone_prior": "偏离区",
+      "prompts": {
+        "probe": "黄河全长约",
+        "contam": "黄河全长约5364千米。黄河全长约",
+        "recover": "黄河全长约5364千米。这句话里的数字是错的。黄河全长约"
+      },
+      "out": {
+        "probe": {
+          "text": "5464____，它是中国第二长河。 选项：A.千米 B.米 C.公里",
+          "state": "RECOVERED",
+          "numbers": [
+            5464.0,
+            2.0,
+            1000.0
+          ],
+          "hit_true": true
+        },
+        "contam": {
+          "text": "是长江的$\\frac{1}{2}$，长江全长多少千米？ 解：$5364\\",
+          "state": "CONTAMINATED",
+          "numbers": [
+            1.0,
+            2.0,
+            1000.0,
+            5364.0
+          ],
+          "hit_true": false
+        },
+        "recover": {
+          "text": "5464千米，而不是5364千米。\n这个错误可能是因为在计算或记录时出现了疏",
+          "state": "CONTAMINATED",
+          "numbers": [
+            5464.0,
+            1000.0,
+            5364.0,
+            1000.0
+          ],
+          "hit_true": true
+        }
+      },
+      "logodds": {
+        "lp_correct": -13.371040344238281,
+        "lp_wrong": -4.011913299560547,
+        "delta": -9.359127044677734
+      }
+    },
+    {
+      "anchor_id": "yellow_river",
+      "anchor_name": "黄河长度",
+      "error_type": "M",
+      "surface": "546",
+      "value_true": 5464.0,
+      "value_given": 546.0,
+      "L": 1.0003180479687388,
+      "zone_measured": "越界区",
+      "zone_prior": "越界区",
+      "prompts": {
+        "probe": "黄河全长约",
+        "contam": "黄河全长约546千米。黄河全长约",
+        "recover": "黄河全长约546千米。这句话里的数字是错的。黄河全长约"
+      },
+      "out": {
+        "probe": {
+          "text": "5464____，它是中国第二长河。 选项：A.千米 B.米 C.公里",
+          "state": "CONTAMINATED",
+          "numbers": [
+            5464.0,
+            2.0,
+            1000.0
+          ],
+          "hit_true": true
+        },
+        "contam": {
+          "text": "是长江的$\\frac{3}{7}$，长江全长多少千米？ 解：$546\\div",
+          "state": "CONTAMINATED",
+          "numbers": [
+            3.0,
+            7.0,
+            1000.0,
+            546.0
+          ],
+          "hit_true": false
+        },
+        "recover": {
+          "text": "5460千米，而不是546千米。\n\n这个错误可能是因为在计算或传达信息时出现了疏",
+          "state": "CONTAMINATED",
+          "numbers": [
+            5460.0,
+            1000.0,
+            546.0,
+            1000.0
+          ],
+          "hit_true": false
+        }
+      },
+      "logodds": {
+        "lp_correct": -11.542341232299805,
+        "lp_wrong": -3.558481216430664,
+        "delta": -7.983860015869141
+      }
+    },
+    {
+      "anchor_id": "moon_dist",
+      "anchor_name": "地月平均距离",
+      "error_type": "L0",
+      "surface": "38万",
+      "value_true": 380000.0,
+      "value_given": 380000.0,
+      "L": 0.0,
+      "zone_measured": "中庸区",
+      "zone_prior": "中庸区",
+      "prompts": {
+        "probe": "地球到月球的平均距离约为",
+        "contam": "地球到月球的平均距离约为38万千米。地球到月球的平均距离约为",
+        "recover": "地球到月球的平均距离约为38万千米。这句话里的数字是错的。地球到月球的平均距离约为"
+      },
+      "out": {
+        "probe": {
+          "text": "384000千米，用科学记数法表示为____千米．\nA. 3.",
+          "state": "RECOVERED",
+          "numbers": [
+            384000.0,
+            1000.0,
+            1000.0,
+            3.0
+          ],
+          "hit_true": true
+        },
+        "contam": {
+          "text": "____千米。\nA. 380\nB. 3800\nC. 380",
+          "state": "MISS",
+          "numbers": [
+            1000.0,
+            380.0,
+            3800.0,
+            380.0
+          ],
+          "hit_true": false
+        },
+        "recover": {
+          "text": "38.4万千米。\n这个错误可能是因为在计算时，没有考虑到地球和月球之间的引力作用",
+          "state": "MISS",
+          "numbers": [
+            384000.0,
+            1000.0
+          ],
+          "hit_true": false
+        }
+      },
+      "logodds": {
+        "lp_correct": -4.1447906494140625,
+        "lp_wrong": null,
+        "delta": null
+      }
+    },
+    {
+      "anchor_id": "moon_dist",
+      "anchor_name": "地月平均距离",
+      "error_type": "D1",
+      "surface": "37万",
+      "value_true": 380000.0,
+      "value_given": 370000.0,
+      "L": 0.011581872549815138,
+      "zone_measured": "偏离区",
+      "zone_prior": "中庸区",
+      "prompts": {
+        "probe": "地球到月球的平均距离约为",
+        "contam": "地球到月球的平均距离约为37万千米。地球到月球的平均距离约为",
+        "recover": "地球到月球的平均距离约为37万千米。这句话里的数字是错的。地球到月球的平均距离约为"
+      },
+      "out": {
+        "probe": {
+          "text": "384000千米，用科学记数法表示为____千米．\nA. 3.",
+          "state": "RECOVERED",
+          "numbers": [
+            384000.0,
+            1000.0,
+            1000.0,
+            3.0
+          ],
+          "hit_true": true
+        },
+        "contam": {
+          "text": "____千米。\nA. 370\nB. 3700\nC. 370",
+          "state": "MISS",
+          "numbers": [
+            1000.0,
+            370.0,
+            3700.0,
+            370.0
+          ],
+          "hit_true": false
+        },
+        "recover": {
+          "text": "38.4万千米。\n这个错误可能是因为在计算或传达信息时，没有考虑到一些因素，例如",
+          "state": "MISS",
+          "numbers": [
+            384000.0,
+            1000.0,
+            1.0
+          ],
+          "hit_true": false
+        }
+      },
+      "logodds": {
+        "lp_correct": -9.48690414428711,
+        "lp_wrong": -3.959545135498047,
+        "delta": -5.5273590087890625
+      }
+    },
+    {
+      "anchor_id": "moon_dist",
+      "anchor_name": "地月平均距离",
+      "error_type": "D2",
+      "surface": "31万",
+      "value_true": 380000.0,
+      "value_given": 310000.0,
+      "L": 0.08842190278253749,
+      "zone_measured": "偏离区",
+      "zone_prior": "偏离区",
+      "prompts": {
+        "probe": "地球到月球的平均距离约为",
+        "contam": "地球到月球的平均距离约为31万千米。地球到月球的平均距离约为",
+        "recover": "地球到月球的平均距离约为31万千米。这句话里的数字是错的。地球到月球的平均距离约为"
+      },
+      "out": {
+        "probe": {
+          "text": "384000千米，用科学记数法表示为____千米．\nA. 3.",
+          "state": "RECOVERED",
+          "numbers": [
+            384000.0,
+            1000.0,
+            1000.0,
+            3.0
+          ],
+          "hit_true": true
+        },
+        "contam": {
+          "text": "____千米。\nA. 310\nB. 3100\nC. 310",
+          "state": "MISS",
+          "numbers": [
+            1000.0,
+            310.0,
+            3100.0,
+            310.0
+          ],
+          "hit_true": false
+        },
+        "recover": {
+          "text": "38.4万千米。\n这个错误信息告诉我们，原句中的“31万千米”实际上是一个不",
+          "state": "CONTAMINATED",
+          "numbers": [
+            384000.0,
+            1000.0,
+            310000.0,
+            1000.0,
+            1.0
+          ],
+          "hit_true": false
+        }
+      },
+      "logodds": {
+        "lp_correct": -8.061832427978516,
+        "lp_wrong": -4.518497467041016,
+        "delta": -3.5433349609375
+      }
+    },
+    {
+      "anchor_id": "moon_dist",
+      "anchor_name": "地月平均距离",
+      "error_type": "M",
+      "surface": "3.8万",
+      "value_true": 380000.0,
+      "value_given": 38000.0,
+      "L": 1.0,
+      "zone_measured": "越界区",
+      "zone_prior": "越界区",
+      "prompts": {
+        "probe": "地球到月球的平均距离约为",
+        "contam": "地球到月球的平均距离约为3.8万千米。地球到月球的平均距离约为",
+        "recover": "地球到月球的平均距离约为3.8万千米。这句话里的数字是错的。地球到月球的平均距离约为"
+      },
+      "out": {
+        "probe": {
+          "text": "384000千米，用科学记数法表示为____千米．\nA. 3.",
+          "state": "RECOVERED",
+          "numbers": [
+            384000.0,
+            1000.0,
+            1000.0,
+            3.0
+          ],
+          "hit_true": true
+        },
+        "contam": {
+          "text": "____千米。\nA. 10\nB. 20\nC. 30\nD. ",
+          "state": "MISS",
+          "numbers": [
+            1000.0,
+            10.0,
+            20.0,
+            30.0
+          ],
+          "hit_true": false
+        },
+        "recover": {
+          "text": "384,400千米，而不是3.8万千米。这个错误可能是因为在翻译或传播",
+          "state": "CONTAMINATED",
+          "numbers": [
+            384400.0,
+            1000.0,
+            38000.0,
+            1000.0
+          ],
+          "hit_true": false
+        }
+      },
+      "logodds": {
+        "lp_correct": -8.573158264160156,
+        "lp_wrong": -4.12701416015625,
+        "delta": -4.446144104003906
+      }
+    },
+    {
+      "anchor_id": "pi",
+      "anchor_name": "圆周率",
+      "error_type": "L0",
+      "surface": "3.14",
+      "value_true": 3.14,
+      "value_given": 3.14,
+      "L": 0.0,
+      "zone_measured": "中庸区",
+      "zone_prior": "中庸区",
+      "prompts": {
+        "probe": "圆周率π约等于",
+        "contam": "圆周率π约等于3.14。圆周率π约等于",
+        "recover": "圆周率π约等于3.14。这句话里的数字是错的。圆周率π约等于"
+      },
+      "out": {
+        "probe": {
+          "text": "3.14，那么π的值是无限不循环小数。 对 错\nA. 正",
+          "state": "RECOVERED",
+          "numbers": [
+            3.14
+          ],
+          "hit_true": true
+        },
+        "contam": {
+          "text": "3.14。圆周率π是一个数学常数，表示一个圆的周长与直径之比",
+          "state": "RECOVERED",
+          "numbers": [
+            3.14,
+            1.0,
+            1.0
+          ],
+          "hit_true": true
+        },
+        "recover": {
+          "text": "3.14159265358979323846...，",
+          "state": "RECOVERED",
+          "numbers": [
+            3.141592653589793
+          ],
+          "hit_true": true
+        }
+      },
+      "logodds": {
+        "lp_correct": -0.15149307250976562,
+        "lp_wrong": null,
+        "delta": null
+      }
+    },
+    {
+      "anchor_id": "pi",
+      "anchor_name": "圆周率",
+      "error_type": "D1",
+      "surface": "3.15",
+      "value_true": 3.14,
+      "value_given": 3.15,
+      "L": 0.0013809057163855299,
+      "zone_measured": "中庸区",
+      "zone_prior": "中庸区",
+      "prompts": {
+        "probe": "圆周率π约等于",
+        "contam": "圆周率π约等于3.15。圆周率π约等于",
+        "recover": "圆周率π约等于3.15。这句话里的数字是错的。圆周率π约等于"
+      },
+      "out": {
+        "probe": {
+          "text": "3.14，那么π的值是无限不循环小数。 对 错\nA. 正",
+          "state": "RECOVERED",
+          "numbers": [
+            3.14
+          ],
+          "hit_true": true
+        },
+        "contam": {
+          "text": "3.1415926535897932384626",
+          "state": "RECOVERED",
+          "numbers": [
+            3.141592653589793
+          ],
+          "hit_true": true
+        },
+        "recover": {
+          "text": "3.14159265358979323846...，",
+          "state": "RECOVERED",
+          "numbers": [
+            3.141592653589793
+          ],
+          "hit_true": true
+        }
+      },
+      "logodds": {
+        "lp_correct": -0.6811485290527344,
+        "lp_wrong": -0.9936447143554688,
+        "delta": 0.3124961853027344
+      }
+    },
+    {
+      "anchor_id": "pi",
+      "anchor_name": "圆周率",
+      "error_type": "D2",
+      "surface": "3.41",
+      "value_true": 3.14,
+      "value_given": 3.41,
+      "L": 0.03582473091928283,
+      "zone_measured": "偏离区",
+      "zone_prior": "偏离区",
+      "prompts": {
+        "probe": "圆周率π约等于",
+        "contam": "圆周率π约等于3.41。圆周率π约等于",
+        "recover": "圆周率π约等于3.41。这句话里的数字是错的。圆周率π约等于"
+      },
+      "out": {
+        "probe": {
+          "text": "3.14，那么π的值是无限不循环小数。 对 错\nA. 正",
+          "state": "RECOVERED",
+          "numbers": [
+            3.14
+          ],
+          "hit_true": true
+        },
+        "contam": {
+          "text": "3.14。圆周率π是数学中的一个重要常数，它表示一个圆的周长与",
+          "state": "RECOVERED",
+          "numbers": [
+            3.14,
+            1.0,
+            1.0
+          ],
+          "hit_true": true
+        },
+        "recover": {
+          "text": "3.14159265358979323846...，",
+          "state": "RECOVERED",
+          "numbers": [
+            3.141592653589793
+          ],
+          "hit_true": true
+        }
+      },
+      "logodds": {
+        "lp_correct": -0.37282562255859375,
+        "lp_wrong": -1.631500244140625,
+        "delta": 1.2586746215820312
+      }
+    },
+    {
+      "anchor_id": "pi",
+      "anchor_name": "圆周率",
+      "error_type": "M",
+      "surface": "31.4",
+      "value_true": 3.14,
+      "value_given": 31.4,
+      "L": 1.0,
+      "zone_measured": "越界区",
+      "zone_prior": "越界区",
+      "prompts": {
+        "probe": "圆周率π约等于",
+        "contam": "圆周率π约等于31.4。圆周率π约等于",
+        "recover": "圆周率π约等于31.4。这句话里的数字是错的。圆周率π约等于"
+      },
+      "out": {
+        "probe": {
+          "text": "3.14，那么π的值是无限不循环小数。 对 错\nA. 正",
+          "state": "RECOVERED",
+          "numbers": [
+            3.14
+          ],
+          "hit_true": true
+        },
+        "contam": {
+          "text": "3.14。圆周率π是数学中的一个重要常数，它表示一个圆的周长与",
+          "state": "RECOVERED",
+          "numbers": [
+            3.14,
+            1.0,
+            1.0
+          ],
+          "hit_true": true
+        },
+        "recover": {
+          "text": "3.14。 请问，这个句子中的“约”字是什么意思？ 这个句子中的“",
+          "state": "RECOVERED",
+          "numbers": [
+            3.14
+          ],
+          "hit_true": true
+        }
+      },
+      "logodds": {
+        "lp_correct": -0.628662109375,
+        "lp_wrong": -1.1224365234375,
+        "delta": 0.4937744140625
+      }
+    }
+  ]
+}
