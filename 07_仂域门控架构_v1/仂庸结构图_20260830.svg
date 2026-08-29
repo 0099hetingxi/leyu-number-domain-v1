@@ -1,0 +1,176 @@
+<svg viewBox="0 0 680 552" xmlns="http://www.w3.org/2000/svg" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif">
+
+  <defs>
+    <marker id="ar" markerWidth="9" markerHeight="9" refX="8" refY="3.2" orient="auto">
+      <path d="M0,0 L8,3.2 L0,6.4 z" fill="var(--color-text-secondary,#888)"/>
+    </marker>
+    <marker id="arG" markerWidth="9" markerHeight="9" refX="8" refY="3.2" orient="auto">
+      <path d="M0,0 L8,3.2 L0,6.4 z" fill="#2ea043"/>
+    </marker>
+    <marker id="arR" markerWidth="9" markerHeight="9" refX="8" refY="3.2" orient="auto">
+      <path d="M0,0 L8,3.2 L0,6.4 z" fill="#f85149"/>
+    </marker>
+    <marker id="arO" markerWidth="9" markerHeight="9" refX="8" refY="3.2" orient="auto">
+      <path d="M0,0 L8,3.2 L0,6.4 z" fill="#d29922"/>
+    </marker>
+  </defs>
+
+  <g transform="scale(0.7234)">
+
+  <!-- ============ 标题 ============ -->
+  <text x="470" y="24" text-anchor="middle" font-size="19" font-weight="700" fill="var(--color-text-primary,#1a1a1a)">仂庸 · 道 —— 结构图（2026-08-30）</text>
+
+  <!-- ============ 任务输入 ============ -->
+  <rect x="390" y="44" width="160" height="40" rx="6"
+        fill="var(--color-background-secondary,#f2f4f7)" stroke="var(--color-border-tertiary,#9aa4b2)" stroke-width="1.5"/>
+  <text x="470" y="69" text-anchor="middle" font-size="14" font-weight="600" fill="var(--color-text-primary,#1a1a1a)">任务输入</text>
+
+  <!-- ============ ① 求存 连接 ============ -->
+  <path d="M470,84 L470,100 L185,100 L185,118" fill="none" stroke="var(--color-text-secondary,#888)" stroke-width="1.6" marker-end="url(#ar)"/>
+  <text x="330" y="95" font-size="12" font-weight="600" fill="var(--color-text-primary,#1a1a1a)">① 求存</text>
+  <text x="330" y="112" font-size="10.5" fill="var(--color-text-secondary,#666)">任务先进域，认锚点</text>
+
+  <path d="M470,84 L470,118" fill="none" stroke="var(--color-text-secondary,#888)" stroke-width="1.6" marker-end="url(#ar)"/>
+
+  <!-- ============ 仂域（身体 / 数据库） ============ -->
+  <rect x="28" y="118" width="314" height="400" rx="8"
+        fill="none" stroke="var(--color-text-primary,#1a1a1a)" stroke-width="1.2"/>
+  <rect x="34" y="124" width="302" height="388" rx="6"
+        fill="none" stroke="var(--color-text-primary,#1a1a1a)" stroke-width="1.2"/>
+  <text x="185" y="150" text-anchor="middle" font-size="15" font-weight="700" fill="var(--color-text-primary,#1a1a1a)">仂 域 ＝ 身 体 ＝ 数据库</text>
+  <text x="185" y="170" text-anchor="middle" font-size="11.5" fill="var(--color-text-secondary,#666)">10 条锚点记录 · 只负责「存」与「供」</text>
+
+  <line x1="50" y1="182" x2="320" y2="182" stroke="var(--color-border-tertiary,#c4cbd4)" stroke-width="1"/>
+
+  <text x="50" y="204" font-size="12" font-weight="600" fill="var(--color-text-primary,#1a1a1a)">五道纠错度</text>
+  <text x="320" y="204" text-anchor="end" font-size="10.5" fill="var(--color-text-secondary,#666)">当前仅用 1 / 5</text>
+
+  <rect x="50" y="214" width="86" height="34" rx="5" fill="rgba(46,160,67,.14)" stroke="#2ea043" stroke-width="1.4"/>
+  <text x="93" y="235" text-anchor="middle" font-size="12.5" font-weight="600" fill="#2ea043">强度 ✓</text>
+
+  <rect x="145" y="214" width="86" height="34" rx="5" fill="rgba(248,81,73,.10)" stroke="#f85149" stroke-width="1.2" stroke-dasharray="3 2"/>
+  <text x="188" y="235" text-anchor="middle" font-size="12.5" font-weight="600" fill="#f85149">方向 ✗</text>
+  <text x="188" y="245" text-anchor="middle" font-size="8" fill="var(--color-text-secondary,#888)">被 max() 抹掉</text>
+
+  <rect x="240" y="214" width="86" height="34" rx="5" fill="none" stroke="var(--color-border-tertiary,#c4cbd4)" stroke-width="1.2" stroke-dasharray="3 2"/>
+  <text x="283" y="235" text-anchor="middle" font-size="12.5" fill="var(--color-text-secondary,#888)">速度 ✗</text>
+
+  <rect x="50" y="256" width="86" height="34" rx="5" fill="none" stroke="var(--color-border-tertiary,#c4cbd4)" stroke-width="1.2" stroke-dasharray="3 2"/>
+  <text x="93" y="277" text-anchor="middle" font-size="12.5" fill="var(--color-text-secondary,#888)">空间 ✗</text>
+
+  <rect x="145" y="256" width="86" height="34" rx="5" fill="none" stroke="var(--color-border-tertiary,#c4cbd4)" stroke-width="1.2" stroke-dasharray="3 2"/>
+  <text x="188" y="277" text-anchor="middle" font-size="12.5" fill="var(--color-text-secondary,#888)">时间 ✗</text>
+
+  <line x1="50" y1="308" x2="320" y2="308" stroke="var(--color-border-tertiary,#c4cbd4)" stroke-width="1"/>
+
+  <text x="50" y="330" font-size="12" font-weight="600" fill="var(--color-text-primary,#1a1a1a)">域的划分</text>
+  <text x="320" y="330" text-anchor="end" font-size="10.5" fill="var(--color-text-secondary,#666)">按需再划</text>
+
+  <rect x="50" y="340" width="128" height="34" rx="5" fill="var(--color-background-secondary,#eef1f5)" stroke="var(--color-border-tertiary,#9aa4b2)" stroke-width="1.2"/>
+  <text x="114" y="361" text-anchor="middle" font-size="12.5" fill="var(--color-text-primary,#1a1a1a)">求存域</text>
+
+  <rect x="192" y="340" width="128" height="34" rx="5" fill="var(--color-background-secondary,#eef1f5)" stroke="var(--color-border-tertiary,#9aa4b2)" stroke-width="1.2"/>
+  <text x="256" y="361" text-anchor="middle" font-size="12.5" fill="var(--color-text-primary,#1a1a1a)">行域</text>
+
+  <rect x="50" y="382" width="128" height="34" rx="5" fill="var(--color-background-secondary,#eef1f5)" stroke="var(--color-border-tertiary,#9aa4b2)" stroke-width="1.2"/>
+  <text x="114" y="403" text-anchor="middle" font-size="12.5" fill="var(--color-text-primary,#1a1a1a)">待域</text>
+
+  <rect x="192" y="382" width="128" height="34" rx="5" fill="var(--color-background-secondary,#eef1f5)" stroke="var(--color-border-tertiary,#9aa4b2)" stroke-width="1.2"/>
+  <text x="256" y="403" text-anchor="middle" font-size="12.5" fill="var(--color-text-primary,#1a1a1a)">悔域（＝撤）</text>
+
+  <line x1="50" y1="436" x2="320" y2="436" stroke="var(--color-border-tertiary,#c4cbd4)" stroke-width="1"/>
+  <text x="185" y="458" text-anchor="middle" font-size="11" fill="var(--color-text-secondary,#666)">仂感头、门控、门控决策 —— 全在身体里</text>
+  <text x="185" y="476" text-anchor="middle" font-size="11" fill="var(--color-text-secondary,#666)">纠错度是「纠错」投射到域上的投影，</text>
+  <text x="185" y="494" text-anchor="middle" font-size="11" fill="var(--color-text-secondary,#666)">不是模型的属性 ⇒ 模型自身 R ＝ 0</text>
+
+  <!-- ============ 主干 ============ -->
+  <rect x="368" y="118" width="544" height="96" rx="8"
+        fill="var(--color-background-secondary,#f7f9fb)" stroke="var(--color-border-tertiary,#9aa4b2)" stroke-width="1.4"/>
+  <text x="640" y="140" text-anchor="middle" font-size="12.5" font-weight="600" fill="var(--color-text-primary,#1a1a1a)">主干（干净）</text>
+  <text x="900" y="140" text-anchor="end" font-size="10.5" fill="#2ea043" font-weight="600">★ 进入端不插仂感头</text>
+
+  <rect x="380" y="152" width="118" height="46" rx="5" fill="var(--color-background-primary,#fff)" stroke="var(--color-border-tertiary,#9aa4b2)" stroke-width="1.2"/>
+  <text x="439" y="180" text-anchor="middle" font-size="13" fill="var(--color-text-primary,#1a1a1a)">分词</text>
+
+  <path d="M500,175 L508,175" stroke="var(--color-text-secondary,#888)" stroke-width="1.5" marker-end="url(#ar)"/>
+
+  <rect x="512" y="152" width="118" height="46" rx="5" fill="var(--color-background-primary,#fff)" stroke="var(--color-border-tertiary,#9aa4b2)" stroke-width="1.2"/>
+  <text x="571" y="180" text-anchor="middle" font-size="13" fill="var(--color-text-primary,#1a1a1a)">嵌入层</text>
+
+  <path d="M632,175 L640,175" stroke="var(--color-text-secondary,#888)" stroke-width="1.5" marker-end="url(#ar)"/>
+
+  <rect x="644" y="152" width="118" height="46" rx="5" fill="var(--color-background-primary,#fff)" stroke="var(--color-border-tertiary,#9aa4b2)" stroke-width="1.2"/>
+  <text x="703" y="180" text-anchor="middle" font-size="13" fill="var(--color-text-primary,#1a1a1a)">神经网络</text>
+
+  <path d="M764,175 L772,175" stroke="var(--color-text-secondary,#888)" stroke-width="1.5" marker-end="url(#ar)"/>
+
+  <rect x="776" y="152" width="118" height="46" rx="5" fill="var(--color-background-primary,#fff)" stroke="var(--color-border-tertiary,#9aa4b2)" stroke-width="1.2"/>
+  <text x="835" y="180" text-anchor="middle" font-size="13" fill="var(--color-text-primary,#1a1a1a)">输出</text>
+
+  <path d="M640,214 L640,244" stroke="var(--color-text-secondary,#888)" stroke-width="1.6" marker-end="url(#ar)"/>
+
+  <!-- ============ 门控 ============ -->
+  <rect x="368" y="244" width="544" height="76" rx="8"
+        fill="rgba(46,160,67,.06)" stroke="#2ea043" stroke-width="1.6"/>
+  <text x="640" y="272" text-anchor="middle" font-size="14" font-weight="700" fill="#2ea043">仂域门控 · adjudicate</text>
+  <text x="640" y="294" text-anchor="middle" font-size="11.5" fill="var(--color-text-secondary,#666)">决策本身也在仂域内 · 管线零判定，只执行裁决</text>
+  <text x="640" y="311" text-anchor="middle" font-size="10.5" fill="var(--color-text-secondary,#888)">闸① 语义归属（触发词同句才判） 闸② 污染复述（精确出现声明值）</text>
+
+  <path d="M368,282 L345,282 L345,300" fill="none" stroke="var(--color-text-secondary,#888)" stroke-width="1.6" marker-end="url(#ar)"/>
+
+  <!-- ============ 三态 ============ -->
+  <path d="M640,320 L640,340 L470,340 L470,362" fill="none" stroke="#d29922" stroke-width="1.6" marker-end="url(#arO)"/>
+  <path d="M640,320 L640,340 L640,362" fill="none" stroke="#f85149" stroke-width="1.6" marker-end="url(#arR)"/>
+  <path d="M640,320 L640,340 L810,340 L810,362" fill="none" stroke="#2ea043" stroke-width="1.6" marker-end="url(#arG)"/>
+
+  <rect x="380" y="364" width="180" height="150" rx="7"
+        fill="rgba(210,153,34,.09)" stroke="#d29922" stroke-width="1.6"/>
+  <text x="470" y="390" text-anchor="middle" font-size="15" font-weight="700" fill="#d29922">行</text>
+  <text x="470" y="424" text-anchor="middle" font-size="30" font-weight="700" fill="#d29922">90%</text>
+  <text x="470" y="446" text-anchor="middle" font-size="11.5" fill="var(--color-text-primary,#1a1a1a)">域判断无问题</text>
+  <text x="470" y="464" text-anchor="middle" font-size="11.5" fill="var(--color-text-primary,#1a1a1a)">放行</text>
+  <line x1="394" y1="478" x2="546" y2="478" stroke="rgba(210,153,34,.4)" stroke-width="1"/>
+  <text x="470" y="496" text-anchor="middle" font-size="10.5" fill="#d29922">漏检 6 例×遍</text>
+  <text x="470" y="509" text-anchor="middle" font-size="10" fill="var(--color-text-secondary,#888)">阈值 L&lt;0.003 太松</text>
+
+  <rect x="570" y="364" width="180" height="150" rx="7"
+        fill="rgba(248,81,73,.09)" stroke="#f85149" stroke-width="1.6"/>
+  <text x="660" y="390" text-anchor="middle" font-size="15" font-weight="700" fill="#f85149">待</text>
+  <text x="660" y="424" text-anchor="middle" font-size="30" font-weight="700" fill="#f85149">0%</text>
+  <text x="660" y="446" text-anchor="middle" font-size="11.5" fill="var(--color-text-primary,#1a1a1a)">重问回主干</text>
+  <text x="660" y="464" text-anchor="middle" font-size="11.5" fill="var(--color-text-primary,#1a1a1a)">让模型自己再来一次</text>
+  <line x1="584" y1="478" x2="736" y2="478" stroke="rgba(248,81,73,.4)" stroke-width="1"/>
+  <text x="660" y="496" text-anchor="middle" font-size="10.5" fill="#f85149">18 次，一次没救回</text>
+  <text x="660" y="509" text-anchor="middle" font-size="10" fill="var(--color-text-secondary,#888)">R ≈ 0 在架构层复现</text>
+
+  <rect x="760" y="364" width="180" height="150" rx="7"
+        fill="rgba(46,160,67,.09)" stroke="#2ea043" stroke-width="1.6"/>
+  <text x="850" y="390" text-anchor="middle" font-size="15" font-weight="700" fill="#2ea043">撤</text>
+  <text x="850" y="424" text-anchor="middle" font-size="30" font-weight="700" fill="#2ea043">100%</text>
+  <text x="850" y="446" text-anchor="middle" font-size="11.5" fill="var(--color-text-primary,#1a1a1a)">域直接供锚点值</text>
+  <text x="850" y="464" text-anchor="middle" font-size="11.5" fill="var(--color-text-primary,#1a1a1a)">不过模型</text>
+  <line x1="774" y1="478" x2="926" y2="478" stroke="rgba(46,160,67,.4)" stroke-width="1"/>
+  <text x="850" y="496" text-anchor="middle" font-size="10.5" fill="#2ea043">39 / 39 全中</text>
+  <text x="850" y="509" text-anchor="middle" font-size="10" fill="var(--color-text-secondary,#888)">查库即得，不靠生成</text>
+
+  <path d="M660,364 L660,350 L910,350 L910,206" fill="none" stroke="#f85149" stroke-width="1.3" stroke-dasharray="5 3" marker-end="url(#arR)"/>
+  <text x="790" y="342" text-anchor="middle" font-size="10" fill="#f85149">二轮输出再过门控</text>
+
+  <!-- ============ 底部结论 ============ -->
+  <rect x="28" y="534" width="884" height="146" rx="8"
+        fill="var(--color-background-secondary,#f7f9fb)" stroke="var(--color-border-tertiary,#9aa4b2)" stroke-width="1.2"/>
+
+  <text x="48" y="560" font-size="13" font-weight="700" fill="var(--color-text-primary,#1a1a1a)">实测结论（40 例 × 3 遍，max_new=96）</text>
+
+  <text x="48" y="585" font-size="12.5" fill="var(--color-text-primary,#1a1a1a)">凡要求模型自己纠的，一律 0 分；凡域直接给答案的，一律满分。</text>
+  <text x="48" y="606" font-size="12.5" fill="var(--color-text-primary,#1a1a1a)">门不值钱 —— 值钱的是门后那条通向数据库的旁路。</text>
+  <text x="48" y="627" font-size="12" fill="var(--color-text-secondary,#666)">门控真正的价值：把本该判「待」的改判成「撤」，即识别出「这次指望模型没用，域直接接管」。</text>
+
+  <line x1="48" y1="642" x2="892" y2="642" stroke="var(--color-border-tertiary,#c4cbd4)" stroke-width="1"/>
+
+  <text x="48" y="662" font-size="11.5" fill="var(--color-text-secondary,#666)">心与域职责分离：心 ＝ 触发器（内生合法）　域 ＝ 身体（承载与执行，必须外置锚）　R ＝ R(域, 锚点, 模型)，非模型属性</text>
+  <text x="48" y="678" font-size="11.5" fill="var(--color-text-secondary,#666)">口径声明：本轮判定仅用五道中的「强度」一道（L = log10 比值），方向被 max() 抹掉，速度 / 空间 / 时间未参与</text>
+
+  </g>
+
+</svg>
