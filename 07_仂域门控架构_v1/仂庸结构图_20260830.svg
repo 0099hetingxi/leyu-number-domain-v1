@@ -18,7 +18,7 @@
   <g transform="scale(0.7234)">
 
   <!-- ============ 标题 ============ -->
-  <text x="470" y="24" text-anchor="middle" font-size="19" font-weight="700" fill="var(--color-text-primary,#1a1a1a)">「仂庸」 · 道 —— 结构图（2026-08-30）</text>
+  <text x="470" y="24" text-anchor="middle" font-size="19" font-weight="700" fill="var(--color-text-primary,#1a1a1a)">「仂庸」 —— 结构图（2026-08-30）</text>
 
   <!-- ============ 任务输入 ============ -->
   <rect x="390" y="44" width="160" height="40" rx="6"
